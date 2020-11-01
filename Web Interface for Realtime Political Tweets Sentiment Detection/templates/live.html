@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>sentiment analysis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+
+
+
+.box {
+  position: absolute;
+  top: 87%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position:absolute;
+  top: 0;
+  right: 35%;
+  width: 10%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+
+
+
+
+
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="menu.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="compare.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white">Compare Models</a>
+    <a href="country.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white">Country Analysis Report</a>
+    <a href="state.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-hover-white">State Analysis Report</a>
+    <a href="live.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large  w3-white">Live Analysis</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Compare Models</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Country Analysis Report</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">State Analysis Report</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Live Analysis</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Election Prediction Using Sentiment Analysis</h1>
+  
+</header>
+
+<!-- First Grid -->
+<h3 class="w3-center">Select party to find live sentiment</h3>
+<form action="http://localhost:5000/liveresult.html" method = "POST">
+<div class="box">
+  <select name="party">
+    <option value="BJP">BJP</option>
+    <option value="Congress">Congress</option>
+    <option value="AAP">AAP</option>
+    <option value="BSP">BSP</option>
+    <option value="MNS">MNS</option>
+    <option value="Shivsena">Shiv Sena</option>
+
+  </select>
+<input type="submit" value="Find Sentiment">
+</div>
+</form>
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="">
+
+
+      
+      
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa  w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Why Sentiment Analysis??</h1>
+      <h5 class="w3-padding-32">Clearly, sentiment analysis gives an organisation the much-needed insights on their customers. Organisations can now adjust their marketing strategies depending on how the customers are responding to it. Sentiment Analysis also helps organisations measure the ROI of their marketing campaigns and improve their customer service. Since sentiment analysis gives the organisations a sneak peek into their customer’s emotions, they can be aware of any crisis that’s to come well in time – and manage it accordingly..</h5>
+
+      <p class="w3-text-grey">Election may be a vital half within the democracy. It's the 
+most    instrument    of    democracy    wherever    the    voters 
+communicate with the representatives. One vital component 
+in associate degree election is that the electi
+on polls/survey.Sentiment analysis can facilitate in election survey with better accuracy than traditional methods .</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: Artificial Intelligence will change the relationship between people and technology.</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Powered by <a href="#" target="_blank">Group-78-PICT</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
